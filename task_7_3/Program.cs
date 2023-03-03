@@ -37,17 +37,17 @@ void PrintArray(int[,] inArray)
     }
 }
 
-double[] AverageColumnArray(int m, int n, int[,] inArray)
+double[] AverageColumnArray(int[,] inArray)
 {
     double sum = 0;
-    double[] result = new double[m];
+    double[] result = new double[inArray.GetLength(0)];
     for (int i = 0; i < inArray.GetLength(1); i++)
     {
         for (int j = 0; j < inArray.GetLength(0); j++)
         {
             sum = sum + inArray[j, i];
         }
-        result[i] = sum / n;
+        result[i] = sum / inArray.GetLength(1);
     }
     return result;
 }
@@ -68,4 +68,4 @@ int maxValue = Prompt("Введите максимальное значение 
 int[,] table = GetArray(m, n, minValue, maxValue);
 PrintArray(table);
 
-WriteLine($"Среднее арифметическое каждого столбца: {string.Join(", ", AverageColumnArray(m, n, table))}");
+WriteLine($"Среднее арифметическое каждого столбца: {string.Join(", ", AverageColumnArray(table))}");
