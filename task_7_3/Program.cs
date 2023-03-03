@@ -45,9 +45,10 @@ double[] AverageColumnArray(int[,] inArray)
     {
         for (int j = 0; j < inArray.GetLength(0); j++)
         {
-            sum = sum + inArray[j, i];
+            sum += inArray[j, i];
         }
         result[i] = sum / inArray.GetLength(1);
+        sum = 0;
     }
     return result;
 }
