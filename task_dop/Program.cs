@@ -161,7 +161,6 @@ int[,] NextArray(int[,] Array, int countArray)
                     if (Array[m - 2, n - 1] == 1) sum += 1;
                     if (Array[m - 2, j] == 1) sum += 1;
                 }
-                Write($"sum = {sum}");
 
                 if (Array[i, j] == 0) if (sum == 3) ArrayNext[i, j] = 1;
                     else if (sum < 2 || sum > 3) ArrayNext[i, j] = 0;
