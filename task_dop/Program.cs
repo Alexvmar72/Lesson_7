@@ -44,122 +44,122 @@ int[,] NextArray(int[,] Array, int countArray)
                 //Сначала реализуем проверку окружения не крайних клеток
                 if (i > 0 && i < m - 1 && j > 0 && j < n - 1)
                 {
-                    if (Array[i - 1, j + 1] == 1) sum += 1;
-                    if (Array[i, j + 1] == 1) sum += 1;
                     if (Array[i + 1, j + 1] == 1) sum += 1;
                     if (Array[i + 1, j] == 1) sum += 1;
                     if (Array[i + 1, j - 1] == 1) sum += 1;
-                    if (Array[i, j - 1] == 1) sum += 1;
+                    if (Array[i - 1, j + 1] == 1) sum += 1;
                     if (Array[i - 1, j - 1] == 1) sum += 1;
                     if (Array[i - 1, j] == 1) sum += 1;
+                    if (Array[i, j + 1] == 1) sum += 1;
+                    if (Array[i, j - 1] == 1) sum += 1;
                 }
 
                 // Теперь проверяем крайний левый столбец n=0
 
                 else if (j == 0 && i > 0 && i < m - 1)
                 {
-                    if (Array[i - 1, j + 1] == 1) sum += 1;
-                    if (Array[i, j + 1] == 1) sum += 1;
                     if (Array[i + 1, j + 1] == 1) sum += 1;
                     if (Array[i + 1, j] == 1) sum += 1;
                     if (Array[i + 1, n - 1] == 1) sum += 1;
-                    if (Array[i, n - 1] == 1) sum += 1;
+                    if (Array[i - 1, j + 1] == 1) sum += 1;
                     if (Array[i - 1, n - 1] == 1) sum += 1;
                     if (Array[i - 1, j] == 1) sum += 1;
+                    if (Array[i, j + 1] == 1) sum += 1;
+                    if (Array[i, n - 1] == 1) sum += 1;
                 }
 
                 // Теперь проверяем крайний правый столбец n=Array.GetLength(1)-1
 
                 else if (j == n - 1 && i > 0 && i < m - 1)
                 {
-                    if (Array[i - 1, 0] == 1) sum += 1;
-                    if (Array[i, 0] == 1) sum += 1;
                     if (Array[i + 1, 0] == 1) sum += 1;
                     if (Array[i + 1, j] == 1) sum += 1;
                     if (Array[i + 1, j - 1] == 1) sum += 1;
-                    if (Array[i, j - 1] == 1) sum += 1;
+                    if (Array[i - 1, 0] == 1) sum += 1;
                     if (Array[i - 1, j - 1] == 1) sum += 1;
                     if (Array[i - 1, j] == 1) sum += 1;
+                    if (Array[i, 0] == 1) sum += 1;
+                    if (Array[i, j - 1] == 1) sum += 1;
                 }
 
 
                 //Здесь проверяем верхнюю строку m=0
                 else if (i == 0 && j > 0 && j < n - 1)
                 {
-                    if (Array[m - 1, j + 1] == 1) sum += 1;
-                    if (Array[i, j + 1] == 1) sum += 1;
                     if (Array[i + 1, j + 1] == 1) sum += 1;
                     if (Array[i + 1, j] == 1) sum += 1;
                     if (Array[i + 1, j - 1] == 1) sum += 1;
-                    if (Array[i, j - 1] == 1) sum += 1;
+                    if (Array[m - 1, j + 1] == 1) sum += 1;
                     if (Array[m - 1, j - 1] == 1) sum += 1;
                     if (Array[m - 1, j] == 1) sum += 1;
+                    if (Array[i, j + 1] == 1) sum += 1;
+                    if (Array[i, j - 1] == 1) sum += 1;
                 }
 
                 // Здесь проверяем нижнюю строку m=Array.GetLength(0)-1
                 else if (i == m - 1 && j > 0 && j < n - 1)
                 {
-                    if (Array[i - 1, j + 1] == 1) sum += 1;
-                    if (Array[i, j + 1] == 1) sum += 1;
                     if (Array[0, j + 1] == 1) sum += 1;
                     if (Array[0, j] == 1) sum += 1;
                     if (Array[0, j - 1] == 1) sum += 1;
-                    if (Array[i, j - 1] == 1) sum += 1;
+                    if (Array[i - 1, j + 1] == 1) sum += 1;
                     if (Array[i - 1, j - 1] == 1) sum += 1;
                     if (Array[i - 1, j] == 1) sum += 1;
+                    if (Array[i, j + 1] == 1) sum += 1;
+                    if (Array[i, j - 1] == 1) sum += 1;
                 }
 
 
                 // Здесь проверяем верхний левый угол m=0,n=0
                 else if (i == 0 && j == 0)
                 {
-                    if (Array[m - 1, j + 1] == 1) sum += 1;
-                    if (Array[i, j + 1] == 1) sum += 1;
                     if (Array[i + 1, j + 1] == 1) sum += 1;
                     if (Array[i + 1, j] == 1) sum += 1;
                     if (Array[i + 1, n - 1] == 1) sum += 1;
-                    if (Array[i, n - 1] == 1) sum += 1;
+                    if (Array[m - 1, j + 1] == 1) sum += 1;
                     if (Array[m - 1, n - 1] == 1) sum += 1;
                     if (Array[m - 1, j] == 1) sum += 1;
+                    if (Array[i, j + 1] == 1) sum += 1;
+                    if (Array[i, n - 1] == 1) sum += 1;
                 }
 
                 // Здесь проверяем верхний правый угол m = 0, n = Array.GetLength(1)-1
                 else if (i == 0 && j == n - 1)
                 {
-                    if (Array[m - 1, 0] == 1) sum += 1;
-                    if (Array[i, 0] == 1) sum += 1;
                     if (Array[i + 1, 0] == 1) sum += 1;
                     if (Array[i + 1, n - 1] == 1) sum += 1;
                     if (Array[i + 1, n - 2] == 1) sum += 1;
-                    if (Array[i, n - 2] == 1) sum += 1;
+                    if (Array[m - 1, 0] == 1) sum += 1;
                     if (Array[m - 1, n - 2] == 1) sum += 1;
                     if (Array[m - 1, n - 1] == 1) sum += 1;
+                    if (Array[i, 0] == 1) sum += 1;
+                    if (Array[i, n - 2] == 1) sum += 1;
                 }
 
                 //Здесь проверяем нижний правый угол m=Array.GetLength(0) - 1, n = Array.GetLength(1)-1
                 else if (i == m - 1 && j == n - 1)
                 {
                     if (Array[m - 2, 0] == 1) sum += 1;
+                    if (Array[m - 2, n - 2] == 1) sum += 1;
+                    if (Array[m - 2, n - 1] == 1) sum += 1;
+                    if (Array[m - 1, n - 2] == 1) sum += 1;
                     if (Array[m - 1, 0] == 1) sum += 1;
                     if (Array[0, 0] == 1) sum += 1;
                     if (Array[0, n - 1] == 1) sum += 1;
                     if (Array[0, n - 2] == 1) sum += 1;
-                    if (Array[m - 1, n - 2] == 1) sum += 1;
-                    if (Array[m - 2, n - 2] == 1) sum += 1;
-                    if (Array[m - 2, n - 1] == 1) sum += 1;
                 }
 
                 //Здесь проверяем нижний левый угол m = Array.GetLength(0) - 1, n = 0
                 else if (i == m - 1 && j == 0)
                 {
                     if (Array[m - 2, j + 1] == 1) sum += 1;
+                    if (Array[m - 2, n - 1] == 1) sum += 1;
+                    if (Array[m - 2, j] == 1) sum += 1;
                     if (Array[m - 1, j + 1] == 1) sum += 1;
+                    if (Array[m - 1, n - 1] == 1) sum += 1;
                     if (Array[0, j + 1] == 1) sum += 1;
                     if (Array[0, j] == 1) sum += 1;
                     if (Array[0, n - 1] == 1) sum += 1;
-                    if (Array[m - 1, n - 1] == 1) sum += 1;
-                    if (Array[m - 2, n - 1] == 1) sum += 1;
-                    if (Array[m - 2, j] == 1) sum += 1;
                 }
 
                 if (Array[i, j] == 0) if (sum == 3) ArrayNext[i, j] = 1;
